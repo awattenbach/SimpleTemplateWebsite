@@ -19,30 +19,30 @@ class SimpleTemplateWebsite {
   	$this->baseFallback= $this->baseSiteFolder.'/Welcome.inc.php';
 	}
 	private function parseUrl() {
-		$SimpleTemplateWebsite->urlArray= array();
+		$this->urlArray= array();
 	  $urlCut= explode("/", $this->input);
 	  $end= explode(".", array_pop($urlCut));
-	  if ($urlCut[0]) $SimpleTemplateWebsite->urlArray[language]= $urlCut[0];
-	  else $SimpleTemplateWebsite->urlArray[language]= $this->baseLanguage;
-	  $SimpleTemplateWebsite->urlArray[layers]= $urlCut;
-	  $SimpleTemplateWebsite->urlArray[pageinfos]= array();
+	  if ($urlCut[0]) $this->urlArray[language]= $urlCut[0];
+	  else $this->urlArray[language]= $this->baseLanguage;
+	  $this->urlArray[layers]= $urlCut;
+	  $this->urlArray[pageinfos]= array();
 	  if (!$end[1]) {
-	    $SimpleTemplateWebsite->urlArray[layers][]= $end[0];
-	    $SimpleTemplateWebsite->urlArray[pageinfos][filename]= '';
-	    $SimpleTemplateWebsite->urlArray[pageinfos][suffix]= '';
+	    $this->urlArray[layers][]= $end[0];
+	    $this->urlArray[pageinfos][filename]= '';
+	    $this->urlArray[pageinfos][suffix]= '';
 	  }
 	  else {
 	    $getVars= explode("-", $end[0]);
 	    if ($getVars[1]) {
-	      $SimpleTemplateWebsite->urlArray[pageinfos][filename]= $getVars[0];
-	      $SimpleTemplateWebsite->urlArray[pageinfos][getvars]= $getVars[1];
+	      $this->urlArray[pageinfos][filename]= $getVars[0];
+	      $this->urlArray[pageinfos][getvars]= $getVars[1];
 	    }
 	    else {
-	      $SimpleTemplateWebsite->urlArray[pageinfos][filename]= $end[0];
+	      $this->urlArray[pageinfos][filename]= $end[0];
 	    }
-	    $SimpleTemplateWebsite->urlArray[pageinfos][suffix]= $end[1];
+	    $this->urlArray[pageinfos][suffix]= $end[1];
 	  }
-	  return $SimpleTemplateWebsite->urlArray;
+	  return $this->urlArray;
 	}
 	public function createLink($src="", $get="", $folder="",$type="") {
 	  $link= $this->baseUrl.$src;
@@ -60,7 +60,7 @@ class SimpleTemplateWebsite {
 	  $this->input= str_replace('.html','',$this->input);
 	  $this->input_array= explode("-", $this->input);
 	  $this->input= $this->input_array[0];
-	  $link= $this->baseUrl.$SimpleTemplateWebsite->urlArray[language].'/';
+	  $link= $this->baseUrl.$this->urlArray[language].'/';
 	  $link.= $this->input;
 	  foreach($_POST as $key => $value) {
 	    $get_vars.= '&'.$key.'='.$value.'';
