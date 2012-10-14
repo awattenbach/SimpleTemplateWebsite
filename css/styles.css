@@ -1,0 +1,307 @@
+/*
+
+	Main Css source for showing a demo of SimpleTemplateWebsite
+	(c) Alexander Wattenbach
+
+*/
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; padding: 0; margin: 0; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { text-align: center; margin: 0; padding: 0; font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { text-align: center; padding: 0; margin: 0; font-size: 14px; line-height: 1.231; background-color: #f9f9f9; }
+body, button, input, select, textarea { font-family: 'Quicksand', sans-serif; color: #222; }
+
+::-moz-selection { background: #4d0075; color: #fff; text-shadow: none; }
+::selection { background: #4d0075; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: none; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; *overflow: visible; }
+table button, table input { *overflow: auto; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== primary styles =====================================================
+ 
+Author: A.Wattenbach
+ 
+========================================================================== */
+ 
+.debugBox {
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+	position: absolute; 
+	right: 5px; 
+	top: 20px; 
+	width: 300px; 
+	font-size: 10px; 
+	display: block; 
+	float: right;
+	background: white; 
+  opacity: 0.8; 
+  filter:Alpha(Opacity=80);
+  text-align: left;
+  padding: 5px;
+}
+
+nav {
+	list-style-type: none;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-family: 'Quicksand', sans-serif;
+	padding-top: 22px;
+	float: left;
+	width: 300px;
+	display: block;
+	letter-spacing: 1px;
+	color: #4d0075;
+	text-align: left;
+}
+.main_navi_active a {
+	color: #2581bf;
+}
+.subnavi a {
+	margin-left: 15px;
+}
+.subnavi_active a {
+	margin-left: 15px;
+	color: #2581bf;
+}
+nav #floatRight {
+	float: right;
+}
+nav li {
+	display: inline;
+}
+nav a, .normLink a.selected {
+	text-transform: uppercase;
+	color: #9a9a9a;
+	text-decoration: none;
+}
+.normLink a:hover, .normLink a.selected {
+	border-bottom:1px solid #4d0075;
+}
+.header {
+	background-color: #f0f0f0;
+}
+.close {
+	display: none;
+	padding-left: 13px;
+	background-image: url(../img/close.png);
+	background-position: 0px 4px;
+	background-repeat: no-repeat;
+}
+.headerNav {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	float:right;
+	width: 100px;
+	display: block;
+}
+p {
+	margin-bottom: 5px;
+}
+.content {
+	text-align: left;
+	margin-top: 20px;
+}
+#main {
+	display: block;
+	width: 956px;
+	text-align: left;
+	margin-right: auto;
+	margin-left: auto;
+}
+.logo_area {
+	display: block;	
+	width: 100px;
+	height: 35px;
+	padding-top: 7px;
+	padding-right: 20px;
+	border-right: 2px solid #4b2569;
+	margin-top: 20px;
+	float: left;
+	cursor: default;
+}
+.logo_txt {
+	float: left;
+	display: block;
+	font-size: 18px;
+	line-height: 15px;
+	margin-top: 20px;
+	padding-top: 5px;
+	padding-left: 15px;
+	color: #9a9a9a;
+}
+.col3 {
+	width: 33%;	
+	float: left;
+	padding-right: 2%;
+}
+.col2 {
+	width: 46%;	
+	float: left;
+	padding-right: 2%;
+}
+.col2 td {
+	padding: 3px;
+}
+.col2 tr:nth-child(odd) { 
+	background-color: #f7f7f7; 
+}
+.col2 tr:nth-child(even) { 
+	background-color: #e8e8e8; 
+}
+.col3First {
+	width: 24%;	
+	float: left;
+	padding-right: 2%;
+}
+
+input[type=text] {
+	width:280px;
+	padding:3px 10px;
+	height:32px;
+	line-height:32px;
+	margin-bottom:5px
+}
+textarea {
+	width:280px;
+	padding:6px 10px;
+	height:97px;
+	line-height:18px;
+	overflow:auto
+}
+input[type=submit] {
+	padding:5px 10px;
+	border:0;
+	cursor:pointer;
+	margin-left:1px;
+	margin-top:5px;
+	line-height:20px;
+	font-size:13px;
+	background-color: #4b2569;
+	color: white;
+}
+form span {
+	margin-left:10px
+}
+form span.error {
+	display:none
+} 
+form span.success {
+display:none 
+}
+.prevButton a {
+	text-indent: -3500px;
+	width: 14px;
+	height: 14px;
+	background-image: url(../img/arrow_left_act.png);
+	background-position: 5px 4px;
+	background-repeat: no-repeat;
+	display: block;
+	float:right;
+	background-color: #4b2569;
+	margin-right: 3px;
+}
+.nextButton a {
+	text-indent: -3500px;
+	width: 14px;
+	height: 14px;
+	background-image: url(../img/arrow_act.png);
+	background-position: 5px 4px;
+	background-repeat: no-repeat;
+	display: block;
+	float: right;
+	background-color: #4b2569;
+}
+.twitterNews {
+	display: none;
+}
+#main h1, #main h2 {
+	color: #4d0075;
+}
+/* ==|== non-semantic helper classes ======================================== */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== media queries ====================================================== */
+
+@media only screen and (min-width: 480px) {
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+/* ==|== print styles ======================================================= */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
